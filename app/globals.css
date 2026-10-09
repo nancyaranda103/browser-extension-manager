@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Noto Sans";
+  src: url("/fonts/NotoSans-VariableFont_wdth,wght.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light;
+  --page-background: #ebf2fc;
+  --page-background-end: #eef8f9;
+  --surface: #fbfdff;
+  --surface-hover: #f3f7fb;
+  --text-primary: #091540;
+  --text-secondary: #535868;
+  --border: #d6dbe2;
+  --control-background: #eeeeef;
+  --control-foreground: #091540;
+  --accent: #c7231a;
+  --accent-hover: #de4840;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --page-background: #040918;
+  --page-background-end: #091540;
+  --surface: #202535;
+  --surface-hover: #292f40;
+  --text-primary: #f2f4f9;
+  --text-secondary: #c6c9d2;
+  --border: #3b4051;
+  --control-background: #2f3548;
+  --control-foreground: #f2f4f9;
+  --accent: #f05d56;
+  --accent-hover: #fa817a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(
+    180deg,
+    var(--page-background) 0%,
+    var(--page-background-end) 100%
+  );
+  background-attachment: fixed;
+  color: var(--text-primary);
+  font-family: "Noto Sans", sans-serif;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
